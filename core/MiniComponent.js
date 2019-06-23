@@ -6,7 +6,7 @@
 
 import eventNames from "../service/eventNames";
 import setEvents from "../service/setEvents";
-import emptyElement from "../service/emptyElement";
+import { emptyElement, escapedContent } from "../service/elementService";
 
 export default class MiniComponent {
 	constructor (container, initialState) {
@@ -20,6 +20,7 @@ export default class MiniComponent {
 		const { container } = this;
 		emptyElement(container);
 		container.insertAdjacentHTML("beforeend", this.render(this.state) || "");
+		escapedContent(container);
 		eventNames.forEach(event => setEvents.bind(this)(event));
 		this.onRender();
 	}
