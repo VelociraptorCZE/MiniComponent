@@ -19,7 +19,7 @@ export default class MiniComponent {
 		this.state = { ...this.state, ...target };
 		const { container } = this;
 		emptyElement(container);
-		container.insertAdjacentHTML("beforeend", this.render() || "");
+		container.insertAdjacentHTML("beforeend", this.render(this.state) || "");
 		eventNames.forEach(event => setEvents.bind(this)(event));
 		this.onRender();
 	}
