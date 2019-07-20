@@ -9,11 +9,3 @@ export function emptyElement (element) {
         element.removeChild(element.firstChild);
     }
 }
-
-export function escapedContent (container) {
-    const elementsWithEscapedContent = [...container.querySelectorAll("[escapedContent]")];
-    elementsWithEscapedContent.forEach(element => {
-        element.insertAdjacentText("beforeend", element.getAttribute("escapedContent"));
-        element.removeAttribute("escapedContent");
-    });
-}

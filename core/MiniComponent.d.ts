@@ -4,8 +4,9 @@
  * MIT License
  */
 
-interface MiniComponent {
+export default interface MiniComponent {
     state: object,
+    constructor(container: Element | string, initialState: Object | void): this,
     setState(target: object): void,
     onMount(): void,
     onRender(): void,
