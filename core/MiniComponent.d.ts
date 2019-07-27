@@ -10,5 +10,5 @@ export default interface MiniComponent {
     setState(target: object): void,
     onMount(): void,
     onRender(): void,
-    render({ state }): string | void
+    render({ state }): Array<Element | Text> | void
 }

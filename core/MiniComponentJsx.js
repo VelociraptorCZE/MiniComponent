@@ -33,20 +33,20 @@ const MiniComponentJsx = {
         }
 
         const parseChildren = child => {
-            if (child instanceof Element) {
-                element.appendChild(child);
-            }
-            else if (typeof child === "string") {
-                element.insertAdjacentText("beforeend", child);
-            }
-            else if (Array.isArray(child)) {
+            if (Array.isArray(child)) {
                 child.forEach(parseChildren);
+            }
+            else {
+                if (child === void 0 || child === null) {
+                    child = "";
+                }
+                element.appendChild(child instanceof Object ? child : document.createTextNode(child));
             }
         };
 
         children.forEach(parseChildren);
 
-        return element;
+        return element.tagName === fragmentName ? [...element.childNodes] : element;
     },
     FRAGMENT: fragmentName
 };

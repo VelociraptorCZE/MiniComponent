@@ -1,12 +1,12 @@
 {
   "name": "minicomponent",
-  "version": "1.5.0",
+  "version": "1.5.5",
   "authors": [
     {
       "name": "Simon Raichl",
       "homepage": "https://github.com/velociraptorcze"
     }
   ],
-  "typings": "./MiniComponent.d.ts",
+  "typings": "./core/MiniComponent.d.ts",
   "license": "MIT"
 }
